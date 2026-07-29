@@ -1,4 +1,4 @@
-//! Valence-backed `ContextFactory` for product `#[chronon_macros_valence::script]` handlers.
+//! Valence-backed `ContextFactory` for product `#[chronon_coordinator_macros::script]` handlers.
 //!
 //! ## Features
 //!
