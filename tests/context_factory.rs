@@ -71,8 +71,8 @@ fn external_rejects_system_actor() {
     let factory = ValenceScriptContextFactory::new(mem_factory_external());
     match ContextFactory::build(&factory, &json!({"System": {"operation": "external"}})) {
         Ok(_) => panic!("expected System reject"),
-        Err(ChrononError::Internal(msg)) => assert!(msg.contains("System")),
-        Err(other) => panic!("expected Internal, got {other:?}"),
+        Err(ChrononError::Identity(msg)) => assert!(msg.contains("System")),
+        Err(other) => panic!("expected Identity, got {other:?}"),
     }
 }
 
@@ -94,7 +94,7 @@ fn failing_inner_factory_rejects_context_build() {
     let factory = ValenceScriptContextFactory::new(Arc::new(FailValenceFactory));
     match ContextFactory::build(&factory, &json!({"System": {"operation": "x"}})) {
         Ok(_) => panic!("expected identity failure"),
-        Err(ChrononError::Internal(msg)) => assert!(msg.contains("integ factory build failed")),
-        Err(other) => panic!("expected Internal, got {other:?}"),
+        Err(ChrononError::Identity(msg)) => assert!(msg.contains("integ factory build failed")),
+        Err(other) => panic!("expected Identity, got {other:?}"),
     }
 }

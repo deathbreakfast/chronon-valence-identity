@@ -94,12 +94,12 @@ dependencies = [
 
 [[package]]
 name = "chronon-core"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72f1a7c4e40022df353828d0487695c817b6d5d4ef6b83b3b9227409a9679d6a"
+version = "0.1.2"
+source = "git+https://github.com/deathbreakfast/chronon?rev=9ba7fdab4c81280c112f37b107a5c0480967dde7#9ba7fdab4c81280c112f37b107a5c0480967dde7"
 dependencies = [
  "async-trait",
  "chrono",
+ "parking_lot",
  "serde",
  "serde_json",
  "thiserror",

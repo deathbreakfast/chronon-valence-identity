@@ -277,8 +277,8 @@ mod tests {
         let actor = serde_json::json!({"System": {"operation": "test"}});
         match factory.build(&actor) {
             Ok(_) => panic!("System must be rejected on external trust"),
-            Err(ChrononError::Internal(msg)) => assert!(msg.contains("System")),
-            Err(other) => panic!("expected Internal, got {other:?}"),
+            Err(ChrononError::Identity(msg)) => assert!(msg.contains("System")),
+            Err(other) => panic!("expected Identity, got {other:?}"),
         }
     }
 
@@ -351,8 +351,8 @@ mod tests {
         let factory = ValenceScriptContextFactory::new(Arc::new(FailValenceFactory));
         match factory.build(&serde_json::json!({"System": {"operation": "x"}})) {
             Ok(_) => panic!("build should fail"),
-            Err(ChrononError::Internal(msg)) => assert!(msg.contains("factory build failed")),
-            Err(other) => panic!("expected Internal, got {other:?}"),
+            Err(ChrononError::Identity(msg)) => assert!(msg.contains("factory build failed")),
+            Err(other) => panic!("expected Identity, got {other:?}"),
         }
     }
 }
