@@ -95,7 +95,7 @@ dependencies = [
 [[package]]
 name = "chronon-core"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/chronon?branch=main#8a80aa2b263f6fb80124c4bd49a62251fc7bbcdc"
+source = "git+https://github.com/unified-field-dev/chronon?branch=main#a9a144d3d485a174d298944a7cb1e3cbb8c06028"
 dependencies = [
  "async-trait",
  "chrono",
@@ -563,7 +563,7 @@ dependencies = [
 [[package]]
 name = "uf-valence"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "uf-valence-backend-mem",
  "uf-valence-core",
@@ -573,7 +573,7 @@ dependencies = [
 [[package]]
 name = "uf-valence-backend-mem"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "async-trait",
  "serde_json",
@@ -584,7 +584,7 @@ dependencies = [
 [[package]]
 name = "uf-valence-core"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "async-trait",
  "chrono",
@@ -603,7 +603,7 @@ dependencies = [
 [[package]]
 name = "uf-valence-macros"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -614,7 +614,7 @@ dependencies = [
 [[package]]
 name = "uf-valence-schema-dsl"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -624,7 +624,7 @@ dependencies = [
 [[package]]
 name = "uf-valence-telemetry"
 version = "0.1.5"
-source = "git+https://github.com/unified-field-dev/valence?branch=main#7072b14f0c0c9a409b54c699d309118b16805c3e"
+source = "git+https://github.com/unified-field-dev/valence?branch=main#fa4d8002ca4e0567b484ed39ae0f076e5cb84820"
 dependencies = [
  "serde_json",
 ]
