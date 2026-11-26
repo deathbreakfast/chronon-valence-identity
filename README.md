@@ -25,6 +25,9 @@ async fn my_job(ctx: Box<dyn chronon_core::ScriptContext>) -> chronon_core::Resu
 
 - `ValenceScriptContextFactory` — rebuild product `Valence` from stored `actor_json`
 - `valence_from_context` — recover `Valence` from `dyn ScriptContext` inside a job
+- `check_run_start` — when a person's run starts, check `Run` on the job again as that person
+  (System runs pass). A refusal is recorded as `refused: missing Run on chronon_job.<id>`, which
+  `parse_refused` reads back. The permission check comes from the host through `RunAccessCheck`.
 
 Wire `ValenceScriptContextFactory::new(valence_factory)` when building the host Chronon runtime.
 
