@@ -110,8 +110,10 @@ dependencies = [
 name = "chronon-valence-identity"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "chronon-core",
  "serde_json",
+ "tokio",
  "uf-valence",
 ]
 

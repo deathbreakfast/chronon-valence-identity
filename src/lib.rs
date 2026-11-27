@@ -9,6 +9,9 @@
 //!   [`valence::Valence`] staged for that dispatch (process map keyed by invoke id — async-safe).
 //! - **Direct construction** — [`ValenceScriptContextFactory::build_valence`] builds a
 //!   [`valence::Valence`] straight from actor JSON, for callers that don't go through Chronon dispatch.
+//! - **Run-start access check** — [`check_run_start`] re-checks `Run` on a job as the person who
+//!   triggered the run, when the run starts; a refusal reads `refused: missing Run on
+//!   chronon_job.<id>` and [`parse_refused`] reads it back. See [`run_access`].
 //!
 //! ## Security
 //!
@@ -24,6 +27,8 @@
 //! | Recover `Valence` inside a script handler | [`valence_from_context`] |
 //! | Build `Valence` directly from actor JSON | [`ValenceScriptContextFactory::build_valence`] |
 //! | Default external-safe router config | [`router_config_reject_external_system`] |
+//! | Re-check `Run` when a person's run starts | [`check_run_start`], [`RunAccessCheck`] |
+//! | Show a refused run with its missing action | [`parse_refused`] |
 //!
 //! Runnable deep dive: `cargo run -p chronon-valence-identity --example wire_factory`
 //!
@@ -56,6 +61,13 @@
 //! let ctx = factory.build(&actor)?;
 //! let _recovered = valence_from_context(&*ctx)?;
 //! ```
+
+pub mod run_access;
+
+pub use run_access::{
+    check_run_start, parse_refused, RunAccessCheck, RunRefused, RunStartError, CHRONON_JOB_KIND,
+    REFUSED_PREFIX, RUN_ACTION,
+};
 
 use std::collections::HashMap;
 use std::sync::atomic::{AtomicU64, Ordering};
